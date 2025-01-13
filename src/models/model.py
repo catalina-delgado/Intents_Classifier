@@ -1,4 +1,4 @@
-from imports import tf
+from imports import tf, SGD
 from src.layers.layers import ConvBlock, AttentionGuided, FullyConnected
 
 class Model():
@@ -7,8 +7,9 @@ class Model():
         self.X_train = X_train
         self.y_train = y_train
         input_shape = self.X_train.shape[1]  # (768) embeddings de BERT
-        input_tensor = Input(shape=(input_shape,))
-        self.input = Reshape((input_shape, 1))(input_tensor)
+        
+        input_tensor = tf.keras.Input(shape=(input_shape,))
+        self.input = tf.keras.layers.Reshape((input_shape, 1))(input_tensor)
     
     def build(self):
         x = ConvBlock(64, 3)(self.input)
