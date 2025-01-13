@@ -29,6 +29,8 @@ Setting Up the Training Environment
 - Organize datasets under the data/ directory.
 - Preprocessing stage added to the data folder
 
+For more details about the NeuroStage framework, clik [here](https://github.com/catalina-delgado/NeuroStage)
+
 ## **Inputs and Outputs**
 
 ### **Inputs**
